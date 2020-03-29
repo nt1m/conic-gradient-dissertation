@@ -75,32 +75,26 @@
 \chapter*{Executive Summary}
 
 {\bf A compulsory section, of at most $1$ page} 
-\vspace{1cm} 
+\vspace{1cm}
 
 \noindent
-This section should pr\'{e}cis the project context, aims and objectives,
-and main contributions (e.g., deliverables) and achievements; the same 
-section may be called an abstract elsewhere.  The goal is to ensure the 
-reader is clear about what the topic is, what you have done within this 
-topic, {\em and} what your view of the outcome is.
+Firefox is the second most popular web browser, it is open source and
+developed by Mozilla. This project aims to implement CSS conic gradients
+into the Gecko, the Firefox rendering engine. Firefox was the only web
+browser as of January 2020 that did not support this feature.
 
-The former aspects should be guided by your specification: essentially 
-this section is a (very) short version of what is typically the first 
-chapter.  Note that for research-type projects, this {\bf must} include 
-a clear research hypothesis.  This will obviously differ significantly
-for each project, but an example might be as follows:
+For this project, \texttt{conic-gradient} has been implemented for most platforms (macOS, Linux, some Windows devices and Android).
 
-\begin{quote}
-My research hypothesis is that a suitable genetic algorithm will yield
-more accurate results (when applied to the standard ACME data set) than 
-the algorithm proposed by Jones and Smith, while also executing in less
-time.
-\end{quote}
+% This section should pr\'{e}cis the project context, aims and objectives,
+% and main contributions (e.g., deliverables) and achievements; the same 
+% section may be called an abstract elsewhere.  The goal is to ensure the 
+% reader is clear about what the topic is, what you have done within this 
+% topic, {\em and} what your view of the outcome is.
 
-\noindent
-The latter aspects should (ideally) be presented as a concise, factual 
-bullet point list.  Again the points will differ for each project, but 
-an might be as follows:
+% \noindent
+% The latter aspects should (ideally) be presented as a concise, factual 
+% bullet point list.  Again the points will differ for each project, but 
+% an might be as follows:
 
 \begin{quote}
 \noindent
@@ -119,44 +113,8 @@ an might be as follows:
 \end{quote}
 
 % -----------------------------------------------------------------------------
+care of rendering.
 
-\chapter*{Summary of Changes}
-
-{\bf A conditional section, of at most $1$ page} 
-\vspace{1cm} 
-
-Iff. the dissertation represents a resubmission (e.g., as the result of
-a resit), this section is compulsory: the content should summarise all
-non-trivial changes made to the initial submission.  Otherwise you can
-omit it, since a summary of this type is clearly nonsensical.
-
-When included, the section will ideally be used to highlight additional
-work completed, and address criticism raised in any associated feedback.
-Clearly it is difficult to give generic advice about how to do so, but
-an example might be as follows:
-
-\begin{quote}
-\noindent
-\begin{itemize}
-\item Feedback from the initial submission criticised the design and 
-      implementation of my genetic algorithm, stating ``there seems 
-      to have been no attention to computational complexity during the
-      design, and obvious methods of optimisation are missing within
-      the resulting implementation''.  Chapter $3$ now includes a
-      comprehensive analysis of the algorithm, in terms of both time
-      and space.  While I have not altered the algorithm itself, I
-      have included a cache mechanism (also detailed in Chapter $3$)
-      that provides a significant improvement in average run-time.
-\item I added a feature in my implementation to allow automatic rather
-      than manual selection of various parameters; the experimental
-      results in Chapter $4$ have been updated to reflect this.
-\item Questions after the presentation highlighted a range of related
-      work that I had not considered: I have make a number of updates 
-      to Chapter $2$, resolving this issue.
-\end{itemize}
-\end{quote}
-
-% -----------------------------------------------------------------------------
 
 \chapter*{Supporting Technologies}
 
@@ -192,52 +150,22 @@ dissertation''); an example is as follows:
 
 % -----------------------------------------------------------------------------
 
-\chapter*{Notation and Acronyms}
-
-{\bf An optional section, of roughly $1$ or $2$ pages}
-\vspace{1cm} 
-
-\noindent
-Any well written document will introduce notation and acronyms before
-their use, {\em even if} they are standard in some way: this ensures 
-any reader can understand the resulting self-contained content.  
-
-Said introduction can exist within the dissertation itself, wherever 
-that is appropriate.  For an acronym, this is typically achieved at 
-the first point of use via ``Advanced Encryption Standard (AES)'' or 
-similar, noting the capitalisation of relevant letters.  However, it 
-can be useful to include an additional, dedicated list at the start 
-of the dissertation; the advantage of doing so is that you cannot 
-mistakenly use an acronym before defining it.  A limited example is 
-as follows:
-
-\begin{quote}
-\noindent
-\begin{tabular}{lcl}
-AES                 &:     & Advanced Encryption Standard                                         \\
-DES                 &:     & Data Encryption Standard                                             \\
-                    &\vdots&                                                                      \\
-${\mathcal H}( x )$ &:     & the Hamming weight of $x$                                            \\
-${\mathbb  F}_q$    &:     & a finite field with $q$ elements                                     \\
-$x_i$               &:     & the $i$-th bit of some binary sequence $x$, st. $x_i \in \{ 0, 1 \}$ \\
-\end{tabular}
-\end{quote}
-
-% -----------------------------------------------------------------------------
-
 \chapter*{Acknowledgements}
 
 {\bf An optional section, of at most $1$ page}
 \vspace{1cm} 
 
 \noindent
-It is common practice (although totally optional) to acknowledge any
-third-party advice, contribution or influence you have found useful
-during your work.  Examples include support from friends or family, 
-the input of your Supervisor and/or Advisor, external organisations 
-or persons who  have supplied resources of some kind (e.g., funding, 
-advice or time), and so on.
+Credits go to the following people for making this project a success:
+\begin{itemize}
+\item The Firefox Layout Team in particular to Jonathan Watt and Sean Voisen for finding this project
+\item The Firefox Graphics Team for WebRender code reviews and answering questions related to WebRender
 
+\item Dr. David Bernhard for supervising this project
+\item Emilio Cobos Álvarez for most code reviews and answering questions related to the Firefox Style System
+\item Lee Salzman for Skia code reviews
+\item Markus Stange and Matt Woodrow for web painting code reviews
+\end{itemize}
 % =============================================================================
 
 % After the front matter comes a number of chapters; under each chapter,
@@ -255,31 +183,51 @@ advice or time), and so on.
 
 % -----------------------------------------------------------------------------
 
-\chapter{Contextual Background}
+\chapter{Background}
 \label{chap:context}
 
-{\bf A compulsory chapter,     of roughly $5$ pages}
 \vspace{1cm} 
 
 \noindent
-This chapter should describe the project context, and motivate each of
-the proposed aims and objectives.  Ideally, it is written at a fairly 
-high-level, and easily understood by a reader who is technically 
-competent but not an expert in the topic itself.
 
-In short, the goal is to answer three questions for the reader.  First, 
-what is the project topic, or problem being investigated?  Second, why 
-is the topic important, or rather why should the reader care about it?  
-For example, why there is a need for this project (e.g., lack of similar 
-software or deficiency in existing software), who will benefit from the 
-project and in what way (e.g., end-users, or software developers) what 
-work does the project build on and why is the selected approach either
-important and/or interesting (e.g., fills a gap in literature, applies
-results from another field to a new problem).  Finally, what are the 
-central challenges involved and why are they significant? 
+\section{Web Standards}
+
+
+Mozilla Firefox uses its own rendering engine. The rendering engine takes care
+care of rendering.
+
+\section{CSS}
+ is a programming language that used to define styling (background images, text colors, etc.) for documents written in HTML, XHTML, SVG or other markup languages typically used for web pages. 
+
+
+
+\section{Web standards}
+
+
+\section{Web compatibility}
+
+
+
+
+
+% This chapter should describe the project context, and motivate each of
+% the proposed aims and objectives.  Ideally, it is written at a fairly 
+% high-level, and easily understood by a reader who is technically 
+% competent but not an expert in the topic itself.
+
+% In short, the goal is to answer three questions for the reader.  First, 
+% what is the project topic, or problem being investigated?  Second, why 
+% is the topic important, or rather why should the reader care about it?  
+% For example, why there is a need for this project (e.g., lack of similar 
+% software or deficiency in existing software), who will benefit from the 
+% project and in what way (e.g., end-users, or software developers) what 
+% work does the project build on and why is the selected approach either
+% important and/or interesting (e.g., fills a gap in literature, applies
+% results from another field to a new problem).  Finally, what are the 
+% central challenges involved and why are they significant? 
  
-The chapter should conclude with a concise bullet point list that 
-summarises the aims and objectives.  For example:
+% The chapter should conclude with a concise bullet point list that 
+% summarises the aims and objectives.  For example:
 
 \begin{quote}
 \noindent
@@ -301,166 +249,424 @@ More specifically, the concrete aims are:
 \end{enumerate}
 \end{quote}
 
-% -----------------------------------------------------------------------------
-
-\chapter{Technical Background}
-\label{chap:technical}
-
-{\bf A compulsory chapter,     of roughly $10$ pages} 
-\vspace{1cm} 
-
-\noindent
-This chapter is intended to describe the technical basis on which execution
-of the project depends.  The goal is to provide a detailed explanation of
-the specific problem at hand, and existing work that is relevant (e.g., an
-existing algorithm that you use, alternative solutions proposed, supporting
-technologies).  
-
-Per the same advice in the handbook, note there is a subtly difference from
-this and a full-blown literature review (or survey).  The latter might try
-to capture and organise (e.g., categorise somehow) {\em all} related work,
-potentially offering meta-analysis, whereas here the goal is simple to
-ensure the dissertation is self-contained.  Put another way, after reading 
-this chapter a non-expert reader should have obtained enough background to 
-understand what {\em you} have done (by reading subsequent sections), then 
-accurately assess your work.  You might view an additional goal as giving 
-the reader confidence that you are able to absorb, understand and clearly 
-communicate highly technical material.
 
 % -----------------------------------------------------------------------------
 
-\chapter{Project Execution}
-\label{chap:execution}
-
-{\bf A topic-specific chapter, of roughly $15$ pages} 
-\vspace{1cm} 
+\chapter{The Firefox Development process}
+\label{chap:process}
 
 \noindent
-This chapter is intended to describe what you did: the goal is to explain
-the main activity or activities, of any type, which constituted your work 
-during the project.  The content is highly topic-specific, but for many 
-projects it will make sense to split the chapter into two sections: one 
-will discuss the design of something (e.g., some hardware or software, or 
-an algorithm, or experiment), including any rationale or decisions made, 
-and the other will discuss how this design was realised via some form of 
-implementation.  
+This chapter describes how to set up a development environment to build Firefox
+and the Firefox development process in general. It is worth noting that due to 
+the 20-year old history of the source code, there are different workflows that 
+have been developed and documented which all work today. This section will
+describe the workflow that I have used for development, which should be close
+to the latest recommended one.
 
-This is, of course, far from ideal for {\em many} project topics.  Some
-situations which clearly require a different approach include:
+\section{Finding issues to work on}
 
+While some of Mozilla's projects are on Github, most older projects like
+Firefox are tracked on Mozilla's own issue tracker called
+\href{https://bugzilla.mozilla.org}{Bugzilla}.
+
+To find simple issues to get familiar with the development process, there
+are "Good first bugs" which can be browsed on \href{https://codetribute.mozilla.org/}{Codetribute}.
+These issues usually have mentors assigned to them and are simple changes 
+with step-by-step instructions.
+
+
+\section{Getting the source code}
+Firefox development uses Mercurial (hg), a version-control system similar to Git,
+although Git can also be used through ports or mirrors.
+
+The command mentioned in the documentation to clone the Firefox source code is:
+
+\begin{verbatim}
+hg clone --uncompressed https://hg.mozilla.org/mozilla-unified
+\end{verbatim}
+
+mozilla-unified is the repository combining the commit history of all other Firefox
+repositories like mozilla-central, mozilla-beta or mozilla-release (which will be
+described at the end of this section) as different branches.
+
+The command above usually takes about 30 minutes depending on the network connection.
+Once the cloning is done, the central branch should be checked out, since it contains
+the latest stable changes:
+
+\begin{verbatim}
+hg up central
+\end{verbatim}
+
+\texttt{hg up} is a shortcut for \texttt{hg update}, which is equivalent to the
+\texttt{git checkout} command on Git, as it lets you check out the source code at
+different commits.
+
+\section{Installing dependencies}
+
+Once the source code is cloned, the dependencies can be installed by running the following command:
+
+\begin{verbatim}
+./mach bootstrap
+\end{verbatim}
+
+This will bring up an interactive wizard that with options to pick from to install
+the tools appropriate for the developer. The wizard will ask whether to use full or artifact builds
+at some point. Full builds are used for C++ and Rust changes, since they require the full binaries
+to be regenerated, while artifact builds are typically used for front-end changes where binaries
+can be downloaded from a server. For this project, full builds are necessary since it involves changes
+on the rendering engine written in C++ and Rust.
+
+\noindent On Windows, extra steps need to be done beforehand, quoted from the documentation:
+
+\begin{quote}
+    1. You need 64-bit version of Windows 7 or later.
+    
+    2. Download and install Visual Studio.
+    
+    3. Finally download the MozillaBuild Package. Installation directory should be: c:\textbackslash\textbackslash mozilla-build\textbackslash
+\end{quote}
+
+\section{Building Firefox}
+
+Once the changes have been made to the source code, in order to test the changes,
+building Firefox is needed. This is done using the following command:
+
+\begin{verbatim}
+./mach build
+\end{verbatim}
+
+The first time, this command takes about one hour for full builds, while artifact builds
+take about 5 minutes depending on the network connection. Once finished, the build can
+be ran using:
+
+\begin{verbatim}
+./mach run
+\end{verbatim}
+
+\section{Getting around the code}
+
+Mozilla provides a very useful search tool where code is regularly indexed to provide
+
+
+
+\section{Committing the changes}
+
+Once the changes have been are tested, they should be committed to be sent for review.
+This is done using the command below:
+
+\begin{verbatim}
+hg commit -m "Bug XXX - Commit message. r=reviewer"
+\end{verbatim}
+
+\noindent where:
 \begin{itemize}
-\item In a project where asymptotic analysis of some algorithm is the goal,
-      there is no real ``design and implementation'' in a traditional sense
-      even though the activity of analysis is clearly within the remit of
-      this chapter.
-\item In a project where analysis of some results is as major, or a more
-      major goal than the implementation that produced them, it might be
-      sensible to merge this chapter with the next one: the main activity 
-      is such that discussion of the results cannot be viewed separately.
+\item \texttt{XXX} is the issue number on Bugzilla.
+\item "Commit message" is a sentence summarising the changes.
+\item the reviewer is referred by their nickname.
 \end{itemize}
 
-\noindent
-Note that it is common to include evidence of ``best practice'' project 
-management (e.g., use of version control, choice of programming language 
-and so on).  Rather than simply a rote list, make sure any such content 
-is useful and/or informative in some way: for example, if there was a 
-decision to be made then explain the trade-offs and implications 
-involved.
+Subsequent changes to the same revision can be done by amending the commit:
+\begin{verbatim}
+hg commit --amend
+\end{verbatim}
 
-\section{Example Section}
+If the commit is out of date, it is possible to update it by pulling the latest
+source code using \texttt{hg pull}, then by rebasing the commit on top of the
+central branch using \texttt{hg rebase -d central}.
 
-This is an example section; 
-the following content is auto-generated dummy text.
-\lipsum
+\section{Submitting for review}
 
-\subsection{Example Sub-section}
+Mozilla uses a third-party tool called \href{https://phacility.com/phabricator/}{Phabricator}
+for code reviews. Mozilla's instance of Phabricator is integrated with a set of
+in-house tools:
 
-\begin{figure}[t]
-\centering
-foo
-\caption{This is an example figure.}
-\label{fig}
-\end{figure}
+\begin{itemize}
+    \item \texttt{moz-phab}: a command-line utility to publish commits to Phabricator
+    \item Bugzilla integration bot, linking Bugzilla issues with Phabricator revisions
+    \item A code review bot that runs on every submitted revision and adding automated
+review comments from linters.
+    \item Lando: a tool that allows merging the revision once it is accepted.
+\end{itemize}
 
-\begin{table}[t]
-\centering
-\begin{tabular}{|cc|c|}
-\hline
-foo      & bar      & baz      \\
-\hline
-$0     $ & $0     $ & $0     $ \\
-$1     $ & $1     $ & $1     $ \\
-$\vdots$ & $\vdots$ & $\vdots$ \\
-$9     $ & $9     $ & $9     $ \\
-\hline
-\end{tabular}
-\caption{This is an example table.}
-\label{tab}
-\end{table}
+In order to submit a commit for review, it is necessary to have a Bugzilla account
+to login to Phabricator. Once logged into Phabricator, assuming the commit to be submitted
+is already checked out, submitting for review can be done using the \texttt{moz-phab submit} command.
 
-\begin{algorithm}[t]
-\For{$i=0$ {\bf upto} $n$}{
-  $t_i \leftarrow 0$\;
-}
-\caption{This is an example algorithm.}
-\label{alg}
-\end{algorithm}
+The commit is now submitted for review. Subsequent changes to address comments from
+reviewers should be amended to the commit using \texttt{hg commit --amend} and re-submitted using
+\texttt{moz-phab submit}.
 
-\begin{lstlisting}[float={t},caption={This is an example listing.},label={lst},language=C]
-for( i = 0; i < n; i++ ) {
-  t[ i ] = 0;
-}
-\end{lstlisting}
+\section{Testing}
 
-This is an example sub-section;
-the following content is auto-generated dummy text.
-Notice the examples in Figure~\ref{fig}, Table~\ref{tab}, Algorithm~\ref{alg}
-and Listing~\ref{lst}.
-\lipsum
+To ensure changes work correctly and don't break existing features, it is necessary to perform
+testing on the software. Manual testing can be done by the developer by running the compiled build of Firefox.
+However, for complex software like Firefox, there are a lot of tasks that need to be tested, 
+so manually testing would take a large amount of time. This is where automated tests become useful.
 
-\subsubsection{Example Sub-sub-section}
+These are many types of tests in Firefox, but for the sake of simplicity, only the ones relevant to
+this project will be described.
 
-This is an example sub-sub-section;
-the following content is auto-generated dummy text.
-\lipsum
+\subsection{Mochitests}
 
-\paragraph{Example paragraph.}
+...
 
-This is an example paragraph; note the trailing full-stop in the title,
-which is intended to ensure it does not run into the text.
+\subsection{Reference testing}
+
+...
+
+\subsection{Web Platform Tests}
+
+For complex changes, it is desirable to run the complete test suite to check if the change
+breaks anything. While it is possible to do this on locally, it takes a large amount of time
+and makes the computer not usable since some tests require the test window to be stay focused
+all the time. to use Mozilla provides a "Try" server where commits can be pushed as often as wanted
+
+\section{Landing the change}
+
+...
+
+mozilla-central is the repository that contains the latest source code that's built
+twice a day by Mozilla's integration server into \href{https://nightly.mozilla.org/}{Firefox Nightly}, 
+the alpha version of Firefox, equivalent to Google Chrome Canary.
 
 % -----------------------------------------------------------------------------
 
-\chapter{Critical Evaluation}
-\label{chap:evaluation}
+\chapter{Technical background}
+\label{chap:technical}
 
-{\bf A topic-specific chapter, of roughly $15$ pages} 
+\section{Anatomy of a web page}
+Web pages are documents written using markup languages like HTML. Their styling is
+defined using the Cascading Style Sheets (CSS) programming language. 
+
+TODO: quick description of what HTML is.
+
+A CSS file contains a set of CSS rules, which themselves contain a CSS selector defining which
+elements should be styled, and a set of CSS properties and values which define how those elements should be styled.
+
+For instance, the following CSS rule gives all paragraphs white text and a blue background:
+\begin{verbatim}
+p {
+    background-color: blue;
+    color: white;
+}
+\end{verbatim}
+
+\section{Anatomy of a browser engine}
+In order to describe the implementation, it is useful to first provide an in-breadth overview of
+how a browser rendering engine renders web pages. This happens in 5 main steps, which are roughly
+similar for all 3 major rendering engines.
+
+The first step is parsing, HTML and CSS files are parsed into data structures that are understood
+by the rendering engine. For this project, only CSS parsing is relevant.
+
+The second step is styling. The CSS engine figures out which CSS properties should apply to each
+element on the web page, for which the process isn't relevant to the project. Also, in each CSS
+property, since the initial value specified by the file may contain variables, different units
+or calculation functions which need to be normalised into a final value, called the computed value.
+An example would be \texttt{calc(45deg - 1turn)} being serialised to \texttt{-315deg}.
+The way normalisation should be done is not precisely specified by the CSS specification, meaning
+that different browser engines can differ to this regard by doing what is convenient for them. The
+only guideline given by the specification is to try to normalise to a value as short as possible.
+
+The third step is layout. The rendering engine computes the size and the position of each box
+of the web page on the screen. Boxes can be elements in the HTML document, but also parts of those
+elements such as lines of text or list markers. This part is not very relevant to the project,
+since conic gradients don't affect the size or position of elements on the screen.
+
+The fourth step is painting. Each box is painted using the styling and layout information computed
+at previous steps. The painting is potentially done on different layers, making it possible to repaint
+one layer without repainting other layers. 
+
+The last step is rendering, which is essentially taking the layers from the previous step and
+rendering them as one single image. Some CSS properties only are applied at this step, such as
+\texttt{transform} (which performs translations, rotations and some other transforms),
+or \texttt{animation}, since it is more convenient and performant for the browser engine to do so.
+
+\section{The Gecko rendering engine}
+
+In Gecko (the Firefox rendering engine), the CSS engine taking care of the styling step is almost
+fully written in Rust, with some rare parts in C++. Rust is a low-level programming language
+developed by Mozilla in 2010, although it has since developed its own independent community. Its
+main goal is to address the shortcomings of C++ in terms of memory safety. It is mainly an imperative
+programming language and provides features familiar to C developers such as structs or enums.
+However, it also provides object-oriented programming features such as traits, which are similar
+to interfaces. Functional programming features such as pattern matching or lambdas can also be found.
+
+The layout code, although not too relevant, is almost 
+
+% -----------------------------------------------------------------------------
+
+\chapter{Implementation}
+\label{chap:execution}
+
 \vspace{1cm} 
 
 \noindent
-This chapter is intended to evaluate what you did.  The content is highly 
-topic-specific, but for many projects will have flavours of the following:
 
-\begin{enumerate}
-\item functional  testing, including analysis and explanation of failure 
-      cases,
-\item behavioural testing, often including analysis of any results that 
-      draw some form of conclusion wrt. the aims and objectives,
-      and
-\item evaluation of options and decisions within the project, and/or a
-      comparison with alternatives.
-\end{enumerate}
 
-\noindent
-This chapter often acts to differentiate project quality: even if the work
-completed is of a high technical quality, critical yet objective evaluation 
-and comparison of the outcomes is crucial.  In essence, the reader wants to
-learn something, so the worst examples amount to simple statements of fact 
-(e.g., ``graph X shows the result is Y''); the best examples are analytical 
-and exploratory (e.g., ``graph X shows the result is Y, which means Z; this 
-contradicts [1], which may be because I use a different assumption'').  As 
-such, both positive {\em and} negative outcomes are valid {\em if} presented 
-in a suitable manner.
+
+\section{Style System}
+
+
+\subsection{Supporting angles in gradients}
+\subsection{Parsing}
+
+\section{Web Painting}
+
+\subsection{Normalization}
+
+
+\section{WebRender}
+
+The main components 
+
+\section{Skia}
+
+
+
+
+\section{Web Platform Tests}
+
+
+
+
+
+
+
+
+
+
+
+% This chapter is intended to describe what you did: the goal is to explain
+% the main activity or activities, of any type, which constituted your work 
+% during the project.  The content is highly topic-specific, but for many 
+% projects it will make sense to split the chapter into two sections: one 
+% will discuss the design of something (e.g., some hardware or software, or 
+% an algorithm, or experiment), including any rationale or decisions made, 
+% and the other will discuss how this design was realised via some form of 
+% implementation.  
+
+% This is, of course, far from ideal for {\em many} project topics.  Some
+% situations which clearly require a different approach include:
+
+% \begin{itemize}
+% \item In a project where asymptotic analysis of some algorithm is the goal,
+%       there is no real ``design and implementation'' in a traditional sense
+%       even though the activity of analysis is clearly within the remit of
+%       this chapter.
+% \item In a project where analysis of some results is as major, or a more
+%       major goal than the implementation that produced them, it might be
+%       sensible to merge this chapter with the next one: the main activity 
+%       is such that discussion of the results cannot be viewed separately.
+% \end{itemize}
+
+% \noindent
+% Note that it is common to include evidence of ``best practice'' project 
+% management (e.g., use of version control, choice of programming language 
+% and so on).  Rather than simply a rote list, make sure any such content 
+% is useful and/or informative in some way: for example, if there was a 
+% decision to be made then explain the trade-offs and implications 
+% involved.
+
+
+% \section{Example Section}
+
+% This is an example section; 
+% the following content is auto-generated dummy text.
+% \lipsum
+
+% \subsection{Example Sub-section}
+
+% \begin{figure}[t]
+% \centering
+% foo
+% \caption{This is an example figure.}
+% \label{fig}
+% \end{figure}
+
+% \begin{table}[t]
+% \centering
+% \begin{tabular}{|cc|c|}
+% \hline
+% foo      & bar      & baz      \\
+% \hline
+% $0     $ & $0     $ & $0     $ \\
+% $1     $ & $1     $ & $1     $ \\
+% $\vdots$ & $\vdots$ & $\vdots$ \\
+% $9     $ & $9     $ & $9     $ \\
+% \hline
+% \end{tabular}
+% \caption{This is an example table.}
+% \label{tab}
+% \end{table}
+
+% \begin{algorithm}[t]
+% \For{$i=0$ {\bf upto} $n$}{
+%   $t_i \leftarrow 0$\;
+% }
+% \caption{This is an example algorithm.}
+% \label{alg}
+% \end{algorithm}
+
+% \begin{lstlisting}[float={t},caption={This is an example listing.},label={lst},language=C]
+% for( i = 0; i < n; i++ ) {
+%   t[ i ] = 0;
+% }
+% \end{lstlisting}
+
+% This is an example sub-section;
+% the following content is auto-generated dummy text.
+% Notice the examples in Figure~\ref{fig}, Table~\ref{tab}, Algorithm~\ref{alg}
+% and Listing~\ref{lst}.
+% \lipsum
+
+% \subsubsection{Example Sub-sub-section}
+
+% This is an example sub-sub-section;
+% the following content is auto-generated dummy text.
+% \lipsum
+
+% \paragraph{Example paragraph.}
+
+% This is an example paragraph; note the trailing full-stop in the title,
+% which is intended to ensure it does not run into the text.
+
+% -----------------------------------------------------------------------------
+
+% \chapter{Critical Evaluation}
+% \label{chap:evaluation}
+
+% {\bf A topic-specific chapter, of roughly $15$ pages} 
+% \vspace{1cm} 
+
+% \noindent
+% This chapter is intended to evaluate what you did.  The content is highly 
+% topic-specific, but for many projects will have flavours of the following:
+
+% \begin{enumerate}
+% \item functional  testing, including analysis and explanation of failure 
+%       cases,
+% \item behavioural testing, often including analysis of any results that 
+%       draw some form of conclusion wrt. the aims and objectives,
+%       and
+% \item evaluation of options and decisions within the project, and/or a
+%       comparison with alternatives.
+% \end{enumerate}
+
+% \noindent
+% This chapter often acts to differentiate project quality: even if the work
+% completed is of a high technical quality, critical yet objective evaluation 
+% and comparison of the outcomes is crucial.  In essence, the reader wants to
+% learn something, so the worst examples amount to simple statements of fact 
+% (e.g., ``graph X shows the result is Y''); the best examples are analytical 
+% and exploratory (e.g., ``graph X shows the result is Y, which means Z; this 
+% contradicts [1], which may be because I use a different assumption'').  As 
+
+
+
+
+% such, both positive {\em and} negative outcomes are valid {\em if} presented 
+% in a suitable manner.
 
 % -----------------------------------------------------------------------------
 
@@ -494,6 +700,8 @@ enough attention.  Ideally, the chapter will consist of three parts:
       resolve this, I could clearly apply the technique of Smith [7]'').
 \end{enumerate}
 
+\section{}
+
 % =============================================================================
 
 % Finally, after the main matter, the back matter is specified.  This is
@@ -519,26 +727,10 @@ enough attention.  Ideally, the chapter will consist of three parts:
 % the same as chapters in a sense, but once signaled as being appendicies via
 % the associated macro, LaTeX manages them appropriatly.
 
-\appendix
+% \appendix
 
-\chapter{An Example Appendix}
-\label{appx:example}
-
-Content which is not central to, but may enhance the dissertation can be 
-included in one or more appendices; examples include, but are not limited
-to
-
-\begin{itemize}
-\item lengthy mathematical proofs, numerical or graphical results which 
-      are summarised in the main body,
-\item sample or example calculations, 
-      and
-\item results of user studies or questionnaires.
-\end{itemize}
-
-\noindent
-Note that in line with most research conferences, the marking panel is not
-obliged to read such appendices.
+% \chapter{An Example Appendix}
+% \label{appx:example}
 
 % =============================================================================
 
