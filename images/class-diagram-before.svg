@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-23 -26 407 334" width="407" font-size="13" font-family="Roboto, Arial" height="334">
+  <g transform="translate(7 4)">
+    <rect rx="3" ry="3" width="347" fill="#fefefe" stroke="#BBB" height="111"/>
+    <text font-weight="bold" text-anchor="middle" x="173.5" y="19" fill="#033656">
+      GenericGradient
+    </text>
+    <path stroke="#BBB" d="M0 26h347"/>
+    <text x="10" y="16" transform="translate(0 26)">
+      kind: GenericGradientKind
+    </text>
+    <text x="10" y="16" transform="translate(0 46)">
+      items: GenericGradientItem&lt;Color, LengthPercentage&gt;
+    </text>
+    <text x="10" y="16" transform="translate(0 66)">
+      repeating: Boolean
+    </text>
+    <text x="10" y="16" transform="translate(0 86)">
+      compat_mode: GradientCompatMode
+    </text>
+  </g>
+  <g transform="translate(42 192)">
+    <rect rx="3" ry="3" width="277" fill="#fefefe" stroke="#BBB" height="86"/>
+    <text font-weight="bold" text-anchor="middle" x="138.5" y="18" font-size="12" fill="#696969">
+      « Enumeration »
+    </text>
+    <text font-weight="bold" text-anchor="middle" x="138.5" y="35" fill="#033656">
+      GenericGradientKind
+    </text>
+    <path stroke="#BBB" d="M0 42h277"/>
+    <text x="10" y="16" transform="translate(0 42)">
+      Linear(LineDirection)
+    </text>
+    <text x="10" y="16" transform="translate(0 62)">
+      Radial(GenericEndingShape&lt;...&gt;, Position)
+    </text>
+  </g>
+  <text text-anchor="middle" x="180" y="145">
+    « use »
+  </text>
+  <g fill="none" stroke="#000">
+    <path stroke-dasharray="7, 3" d="M181 115v77"/>
+    <path d="M186 182l-5 10-5-10"/>
+  </g>
+</svg>

@@ -95,7 +95,8 @@
 
 % configure style of bibliography
 
-\bibliographystyle{plain}
+\bibliographystyle{IEEEtran}
+% \bibliography{IEEEabrv,mybibfile}
 
 % configure style of pages
 
@@ -190,6 +191,11 @@
   \noindent {\dissertation@author}, \today
 }
 
+% define macro to generate UoB declaration
+
+
+
+
 % define macros to mark front, main and back matter
 
 \renewcommand{\frontmatter}{
@@ -212,5 +218,21 @@
 \makeatother
 
 % =============================================================================
+\usepackage{float}
+\usepackage{graphicx,verbatimbox}
+\usepackage{todonotes}
+\usepackage{subcaption}
+\usepackage{minted}
+\usepackage{array}
+\lstset{
+  basicstyle=\ttfamily,
+  columns=fullflexible,
+  keepspaces=true,
+  breaklines=true,
+}
 
 
+\setlength{\parskip}{0.6em}
+
+\usepackage[parfill]{parskip}
+\raggedbottom
